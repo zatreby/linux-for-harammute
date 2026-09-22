@@ -1,0 +1,12 @@
+audio-separator==0.41.0
+audioread==3.1.0
+email-validator==2.3.0
+fastapi==0.110.2
+librosa==0.11.0
+numpy==2.5.3
+onnxruntime==1.30.0
+pydantic-settings==2.15.0
+pydub==0.25.1
+python-multipart==0.0.32
+uvicorn==0.53.0
+yt-dlp==2026.8.19

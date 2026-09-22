@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+*.pyc
+server.log
+model_cache/audio-separator/*.onnx
