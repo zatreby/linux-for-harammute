@@ -1,8 +1,7 @@
 """Job model and in-memory/JSON-backed job store.
 
-Linux reimplementation of the compiled ``jobs`` module shipped with the
-HaramMute Windows desktop app. Exposes the interface ``main.py``,
-``schemas.py`` and ``pipeline.py`` expect.
+Tracks each job's status, chunk progress and output paths, and persists them
+so results survive a server restart.
 """
 
 from __future__ import annotations

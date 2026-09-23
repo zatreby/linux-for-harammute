@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# HaramMute local server for Linux: one-shot installer.
+# Linux server for the HaramMute extension: one-shot installer.
 #
 #   ./install.sh            # auto-detect GPU, install, enable the user service
 #   ./install.sh --accel cpu|cuda|openvino
@@ -93,7 +93,7 @@ if [ "$SERVICE" = 1 ]; then
   mkdir -p "$UNIT_DIR"
   cat > "$UNIT_DIR/harammute.service" <<EOF
 [Unit]
-Description=HaramMute local server (Linux port)
+Description=Linux server for the HaramMute extension (third-party, independent project)
 After=network.target
 
 [Service]

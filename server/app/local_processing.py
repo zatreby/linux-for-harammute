@@ -1,8 +1,5 @@
 """Local processing helpers: yt-dlp download and UVR (audio-separator) separation.
 
-Linux reimplementation of the compiled ``local_processing`` module from the
-HaramMute Windows desktop app.
-
 Separation runs in a short-lived child process (one per job). The model and
 all of torch/onnxruntime's arenas live only in that child, so memory goes back
 to the OS as soon as the job finishes or is cancelled.

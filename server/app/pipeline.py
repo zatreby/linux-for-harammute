@@ -1,8 +1,7 @@
 """Job pipeline: download -> split into chunks -> separate vocals -> encode MP3.
 
-Linux reimplementation of the compiled ``pipeline`` module from the HaramMute
-Windows desktop app. Produces per-chunk vocals MP3s for progressive playback
-plus a full ``vocals`` stem once every chunk is done.
+Produces per-chunk vocals MP3s for progressive playback plus a full ``vocals``
+stem once every chunk is done, in the layout the browser extension polls for.
 """
 
 from __future__ import annotations

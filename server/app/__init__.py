@@ -1,1 +1,1 @@
-"""HaramMute local server for Linux."""
+"""Linux server for the HaramMute browser extension (third-party, independent project)."""

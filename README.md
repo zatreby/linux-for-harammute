@@ -1,18 +1,21 @@
-# HaramMute for Linux
+# Linux server for the HaramMute extension
 
 Local server that lets the [HaramMute](https://haram-mute.com/) browser extension
 work on Linux in its free **On Your Computer** mode. The extension removes
 background music from YouTube videos; on Windows it does that by talking to a
 desktop app on `127.0.0.1:8765`. There is no Linux desktop app. This is one.
 
-Not affiliated with HaramMute. Clean reimplementation of the local API; the
-extension itself is unchanged.
+**Third-party, independent project.** Made by a user, not by HaramMute. Not
+affiliated with, endorsed by, or supported by HaramMute. They do not maintain
+or plan a Linux build, so please report issues here, not to them. Clean reimplementation of the local API from observing the
+extension's requests; the extension itself is unchanged and none of its code
+is included.
 
 ## Install
 
 ```bash
-git clone https://github.com/zatreby/harammute-linux
-cd harammute-linux
+git clone https://github.com/zatreby/linux-for-harammute
+cd linux-for-harammute
 ./install.sh
 ```
 
@@ -75,8 +78,21 @@ What the extension calls, all on `127.0.0.1:8765` (falls back to 8766-8768):
 | GET | `/jobs/{id}/chunks/{i}/vocals` | MP3 for one chunk, 202 while not ready |
 | GET | `/jobs/{id}/stems/vocals` | full vocals MP3 once completed |
 
-## License
+## License and third-party notices
 
-MIT. The UVR model is from the
-[Ultimate Vocal Remover](https://github.com/Anjok07/ultimatevocalremovergui)
-project and is downloaded at install time, not bundled.
+This project is MIT licensed (see `LICENSE`). It is an independent project
+and is not affiliated with, endorsed by, or maintained by HaramMute. The
+extension itself is HaramMute's; this repository contains none of its code.
+
+What it builds on, all installed or downloaded at install time:
+
+| Component | License | Role |
+| --- | --- | --- |
+| [audio-separator](https://github.com/nomadkaraoke/python-audio-separator) | MIT | runs the separation model |
+| `UVR-MDX-NET-Voc_FT.onnx` from [Ultimate Vocal Remover](https://github.com/Anjok07/ultimatevocalremovergui) | MIT | vocal separation model (downloaded, not bundled) |
+| `model_cache/audio-separator/*.json` | MIT (UVR / audio-separator model lists) | pinned model metadata so installs are reproducible |
+| [yt-dlp](https://github.com/yt-dlp/yt-dlp) | Unlicense | audio download |
+| [FastAPI](https://github.com/fastapi/fastapi) / [uvicorn](https://github.com/encode/uvicorn) | MIT / BSD-3 | HTTP server |
+| [librosa](https://github.com/librosa/librosa), [pydub](https://github.com/jiaaro/pydub), [audioread](https://github.com/beetbox/audioread) | ISC / MIT / MIT | audio I/O |
+| [onnxruntime](https://github.com/microsoft/onnxruntime) (+ OpenVINO or CUDA build) | MIT | model inference |
+| ffmpeg | LGPL/GPL, system package | chunking and MP3 encoding, not redistributed |

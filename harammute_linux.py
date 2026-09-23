@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""HaramMute local server for Linux.
+"""Linux server for the HaramMute browser extension (third-party, independent project).
 
 Drop-in replacement for the Windows-only "HaramMute desktop app" that the
 HaramMute browser extension talks to in "On Your Computer" mode.
